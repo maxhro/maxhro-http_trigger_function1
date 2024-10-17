@@ -12,6 +12,17 @@ app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
 # This function will be triggered when an HTTP request is made to the route "http_trigger_function1".
 @app.route(route="http_trigger_function1")
 def http_trigger_function1(req: func.HttpRequest) -> func.HttpResponse:
+    """
+    An HTTP-triggered function that processes incoming requests to greet a user by name.
+
+    Args:
+        req (func.HttpRequest): The HTTP request object that contains query parameters
+        and the request body.
+
+    Returns:
+        func.HttpResponse: An HTTP response object that contains greeting or an error message.
+    """
+    
     # Log an informational message indicating that the function has processed an HTTP request.
     logging.info('Python HTTP trigger function processed a request.')
 
